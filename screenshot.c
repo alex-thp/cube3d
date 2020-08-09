@@ -6,7 +6,7 @@
 /*   By: alexandre <alexandre@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 13:31:31 by ade-temm          #+#    #+#             */
-/*   Updated: 2020/08/09 16:38:39 by alexandre        ###   ########.fr       */
+/*   Updated: 2020/08/09 17:38:00 by alexandre        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ unsigned char		*ft_do_file_header(t_map *tab)
 	return (header);
 }
 
+//PEU ETRE RETIRER 1 A RES_X ET/OU RES_Y
 unsigned char		*ft_do_img_header(t_map *tab)
 {
 	unsigned char		*header;
