@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   screenshot.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-temm <ade-temm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alexandre <alexandre@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 13:31:31 by ade-temm          #+#    #+#             */
-/*   Updated: 2020/08/09 12:07:43 by ade-temm         ###   ########.fr       */
+/*   Updated: 2020/08/09 16:38:39 by alexandre        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@ unsigned char		*ft_do_file_header(t_map *tab)
 {
 	unsigned char	*header;
 	int				file_size;
+	int				padding;
 
 	header = malloc(14);
-	file_size = 54 + (4 * tab->doc->res_x) * tab->doc->res_y;
+	//file_size = 54 + (4 * tab->doc->res_x) * tab->doc->res_y;
+	padding = (4 - (tab->doc->res_x * 3) % 4) %4;
+	file_size = 14 + 40 + (3 * tab->doc->res_x + padding) * tab->doc->res_y;
 	ft_bzero(header, 14);
 	header[0] = (unsigned char)'B';
 	header[1] = (unsigned char)'M';
